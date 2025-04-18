@@ -177,8 +177,10 @@ bot.on('message', async (msg) => {
       const songId = song.id; 
 
       const caption = `🎵 *${title}* oleh *${artist}*`;
+      const thumbnail = song.song_art_image_url;
 
-      bot.sendMessage(chatId, caption, {
+      bot.sendPhoto(chatId, thumbnail, {
+        caption: caption,
         parse_mode: 'Markdown',
         reply_markup: {
           inline_keyboard: [
